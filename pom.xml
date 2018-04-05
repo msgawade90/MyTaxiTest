@@ -30,6 +30,8 @@
         <com.google.guava.guava.version>21.0</com.google.guava.guava.version>
         <io.springfox.springfox-swagger2>2.3.1</io.springfox.springfox-swagger2>
         <io.springfox.springfox-swagger-ui>2.3.1</io.springfox.springfox-swagger-ui>
+<!--         <springsecurity.version>4.1.1.RELEASE</springsecurity.version>
+ -->        
     </properties>
 
     <dependencies>
@@ -92,6 +94,67 @@
             <version>${io.springfox.springfox-swagger-ui}</version>
         </dependency>
 
+        <dependency>
+        	<groupId>org.scala-lang</groupId>
+        	<artifactId>scala-library</artifactId>
+        	<version>2.11.0</version>
+        </dependency>
+        
+
+		<!-- Spring Security OAuth2-->
+		<!-- <dependency>
+		    <groupId>org.springframework.security.oauth</groupId>
+		    <artifactId>spring-security-oauth2</artifactId>
+		    <version>${springsecurityoauth2.version}</version>
+		</dependency> -->
+		
+		<!-- jstl for jsp page -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		
+		
+		<!-- do you like thymeleaf? -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+		
+		<!-- optional, it brings userful tags to display spring security stuff -->
+       <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+        </dependency>
+
+        <!-- hot swapping, disable cache for template, enable live reload -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Optional, for bootstrap -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+        
+        
+        
     </dependencies>
 
     <build>

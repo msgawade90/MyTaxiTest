@@ -19,4 +19,6 @@ public interface DriverService
 
     List<DriverDO> find(OnlineStatus onlineStatus);
 
+	List<DriverDO> findByName(String username) throws EntityNotFoundException;
+
 }

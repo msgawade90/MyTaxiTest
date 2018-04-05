@@ -3,6 +3,8 @@ package com.mytaxi.controller.mapper;
 import com.mytaxi.datatransferobject.DriverDTO;
 import com.mytaxi.domainobject.DriverDO;
 import com.mytaxi.domainvalue.GeoCoordinate;
+
+
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,7 +13,7 @@ public class DriverMapper
 {
     public static DriverDO makeDriverDO(DriverDTO driverDTO)
     {
-        return new DriverDO(driverDTO.getUsername(), driverDTO.getPassword());
+        return new DriverDO(driverDTO.getUsername(), driverDTO.getPassword(),driverDTO.getCarDTO());
     }
 
 
@@ -21,6 +23,7 @@ public class DriverMapper
             .setId(driverDO.getId())
             .setPassword(driverDO.getPassword())
             .setUsername(driverDO.getUsername());
+           // .setCarDTO.DriverDTO.newBuilder().get(driverDO.getCarDO().getLicense_plate());
 
         GeoCoordinate coordinate = driverDO.getCoordinate();
         if (coordinate != null)

@@ -47,3 +47,25 @@ Security: secure the API. It's up to you how you are going to implement the secu
 
 NOTE:
 Please make sure to not submit any personal data with your tests result. Personal data is for example your name, your birthdate, email address etc.
+
+
+
+
+How run application :
+
+http://localhost:8080/login 
+
+First login to this URL by any user .There are two users 
+1. username : admin
+   password : password 
+   
+2. username : user
+   password : password 
+   
+Then start the swagger test.
+
+
+Note : Due to lack of time unable to cover all test cases .   
+
+
+

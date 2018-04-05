@@ -122,5 +122,22 @@ public class DefaultDriverService implements DriverService
         }
         return driverDO;
     }
+    
+    private List<DriverDO> findDriverCheckedName(String username) throws EntityNotFoundException
+    {
+        List<DriverDO> driverDOList = driverRepository.findByName(username);
+        if (driverDOList == null)
+        {
+            throw new EntityNotFoundException("Could not find entity with id: " + username);
+        }
+        return driverDOList;
+    }
+
+
+
+	@Override
+	public List<DriverDO> findByName(String username) throws EntityNotFoundException {
+        return findDriverCheckedName(username);
+	}
 
 }

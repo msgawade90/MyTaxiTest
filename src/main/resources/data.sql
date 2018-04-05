@@ -40,3 +40,20 @@ values
  (8,
  'aced0005737200226f72672e737072696e676672616d65776f726b2e646174612e67656f2e506f696e7431b9e90ef11a4006020002440001784400017978704023000000000000404bfa1cac083127', now(), now(), false, 'ONLINE',
 'driver08pw', 'driver08');
+insert into driver (id, coordinate, date_coordinate_updated, date_created, deleted, online_status, password, username)
+values
+ (201,'100200', now(), now(), false, 'OFFLINE','201pw', '201name');
+ 
+ insert into driver (id, coordinate, date_coordinate_updated, date_created, deleted, online_status, password, username)
+values
+ (202,'400500', now(), now(), false, 'OFFLINE','202pw', '202name');
+
+
+
+insert into car(ID,CONVERTIBLE,DATE_CREATED,DELETED,DRIVER_ID,ENGINE_TYPE,LICENSE_PLATE,MANUFACTURER,RATING,SEAT_COUNT,SELECTED )
+values
+ (101,20,now(),'no',201,'Gas',2387287387,'BMW',100,4,'NO');
+ 
+ insert into car(ID,CONVERTIBLE,DATE_CREATED,DELETED,DRIVER_ID,ENGINE_TYPE,LICENSE_PLATE,MANUFACTURER,RATING,SEAT_COUNT,SELECTED )
+values
+ (102,20,now(),'no',202,'Gas',2387287388,'BMW',100,4,'NO');

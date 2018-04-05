@@ -1,15 +1,20 @@
 package com.mytaxi.domainobject;
 
+import com.mytaxi.datatransferobject.CarDTO;
 import com.mytaxi.domainvalue.GeoCoordinate;
 import com.mytaxi.domainvalue.OnlineStatus;
 import java.time.ZonedDateTime;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
@@ -52,6 +57,13 @@ public class DriverDO
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OnlineStatus onlineStatus;
+    
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "driver", cascade = CascadeType.ALL)
+	private CarDO carDO;
+	
+	@Column
+	private Long carId;
+
 
 
     private DriverDO()
@@ -59,14 +71,16 @@ public class DriverDO
     }
 
 
-    public DriverDO(String username, String password)
+    public DriverDO(String username, String password,CarDTO carDTO)
     {
         this.username = username;
         this.password = password;
+        this.carDO=carDO;
         this.deleted = false;
         this.coordinate = null;
         this.dateCoordinateUpdated = null;
         this.onlineStatus = OnlineStatus.OFFLINE;
+        this.carId = null;
     }
 
 
@@ -129,5 +143,27 @@ public class DriverDO
         this.coordinate = coordinate;
         this.dateCoordinateUpdated = ZonedDateTime.now();
     }
+
+
+	public CarDO getCarDO() {
+		return carDO;
+	}
+
+
+	public void setCarDO(CarDO carDO) {
+		this.carDO = carDO;
+	}
+
+
+	public Long getCarId() {
+		return carId;
+	}
+
+
+	public void setCarId(Long carId) {
+		this.carId = carId;
+	}
+    
+    
 
 }
